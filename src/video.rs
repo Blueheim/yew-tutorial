@@ -1,1 +1,2 @@
-pub mod model;
+pub mod components;
+pub mod video_model;
