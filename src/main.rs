@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::video::model::Video;
+use crate::video::model::{Video, VideosList};
 
 mod video;
 
@@ -33,21 +33,12 @@ fn app() -> Html {
         },
     ];
 
-    let videos = videos
-        .iter()
-        .map(|video| {
-            html! {
-                <p key={video.id}>{format!("{}: {}", video.speaker, video.title)}</p>
-            }
-        })
-        .collect::<Html>();
-
     html! {
         <>
             <h1>{ "RustConf Explorer" }</h1>
             <div>
                 <h3>{ "Videos to watch" }</h3>
-                { videos }
+                <VideosList videos={videos} />
             </div>
             // ...
         </>
